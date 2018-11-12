@@ -1,0 +1,29 @@
+---
+title: "Untitled"
+author: "Rui Wang"
+date: "9/12/2018"
+output: pdf_document
+---
+
+```{r}
+# YFS: 15 <= 0.000162408
+# NTR: 11 <= 0.0002288806
+# ADIPOSE: 8 <= 8.699435e-05
+# Brain 7 <= 6.517691e-05
+# Brain-2 13 <= 8.469055e-05
+library(knitr)
+library(dplyr)
+# Read Data
+data <- read.table("/Users/ray/Desktop/Alzheimer/IGAP.results.txt", header = TRUE, sep = ",", dec = ".")
+# Choose Source
+unique(data$source)
+subset <- data%>%filter(source == "Brain-2") 
+P_values <- subset$TWAS.P
+#controls the FDR at level 0.05 
+alpha = 0.05
+P_values <- sort(P_values)
+R <- 1:length(P_values)
+# list of k/m*alpha
+FDR <- R/length(P_values)*alpha
+P_values <= FDR
+```
