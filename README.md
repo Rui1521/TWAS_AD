@@ -1,6 +1,6 @@
 # TWAS_AD
 
-This is the code for research article Prediction of Alzheimer's disease-associated genes by integration of GWAS summary data and expression data. 
+This is the code for research article Prediction of Alzheimer's disease-associated genes by integration of GWAS summary data and expression data. https://github.com/sichenghao1992/TWAS_AD
 
 GWAS summary data are from IGAP[1]. We used TWAS[2] method to integrate GWAS summary data and expression data. 
 
